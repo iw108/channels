@@ -1,0 +1,21 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Example Hanging</title>
+</head>
+
+<body>
+
+<script>
+  const firstEndpoint = '/example/first-endpoint/';
+  const secondEndpoint = '/example/second-endpoint/';
+
+  Promise.all([fetch(firstEndpoint), fetch(secondEndpoint)])
+   .then(responses => responses.forEach(r => r.json()))
+   .then(responses => { console.log(responses) })
+   .catch(err => { console.log(err) })
+
+</script>
+
+</body>
+</html>
